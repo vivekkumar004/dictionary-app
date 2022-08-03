@@ -42,7 +42,7 @@ function App() {
   };
 
   const handleSubmit = () => {
-    setInitail(false);
+
     fetch(searchText)
       .then((res) => res.json())
       .then((json) => {
@@ -51,6 +51,7 @@ function App() {
       .catch((err) => {
         setError(true);
       });
+    setInitail(false);
     console.log(searchResults);
   }
   return (
@@ -62,16 +63,16 @@ function App() {
 
       {error && <p>Error occured</p>}
 
-      {initial &&
+      {initial === true ?
         <div id="initailcontainer">
           <h3><b>Word of the day</b></h3>
           <p> Word: {randomWord.word}</p>
           <p>Defination : {randomWord.definition}</p>
           <p>Pronunication : {randomWord.pronunciation}</p>
         </div>
+        :
+        <ItemComponent data={searchResults} />
       }
-      {/* <ItemComponent data={searchResults} /> */}
-
 
     </div>
 
