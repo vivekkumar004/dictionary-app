@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-top: 40px;
 }
 
 .App-logo {
@@ -32,7 +33,15 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
+#initailcontainer {
+  border: solid;
+  margin: 100px;
+}
+
+#text-field {}
